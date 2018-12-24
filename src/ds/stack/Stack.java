@@ -13,6 +13,25 @@ public class Stack {
 	}
 	
 	public void push(long j) {
+		// If the stack is full a new arr is created to copy all the values into it
+		// Then, the current stack is assigned a new arr with twice the size of the origi
+		// Finally, all the elements in the temporary arr are pushed onto the current stack
+		if (isFull()) {
+			long[] tempArr = new long[maxSize];
+			
+			int counter = 0;
+			while(!isEmpty()) {
+				tempArr[counter] = pop();
+				++counter;
+			}
+			
+			stackArray = new long[maxSize * 2];
+			
+			for(int i = tempArr.length - 1; i >= 0; --i) {
+				push(tempArr[i]);
+			}
+		}
+		
 		top++;
 		stackArray[top] = j;
 	}
