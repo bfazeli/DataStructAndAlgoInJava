@@ -38,6 +38,7 @@ public class Stack {
 	
 	public long pop() {
 		if (isEmpty()) {
+			System.out.println("Stack is empty");
 			return -1;
 		}
 		
