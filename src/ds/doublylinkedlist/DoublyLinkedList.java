@@ -125,12 +125,13 @@ public class DoublyLinkedList {
 		
 		temp.next = null;
 		temp.previous = null;
+		--length;
 		
 		return temp;
 	}
 	
 	public void displayForward() {
-		System.out.println("List (first --> last) ");
+		System.out.println("List has " + length + " (first --> last) ");
 		
 		Node current = first;
 		while(current != null) {
@@ -140,7 +141,7 @@ public class DoublyLinkedList {
 	}
 	
 	public void displayBackwards() {
-		System.out.println("List (last --> first) ");
+		System.out.println("List has " + length + " (last --> first) ");
 		
 		Node current = last;
 		while(current != null) {
